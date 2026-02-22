@@ -15,6 +15,7 @@ let player = {
 function randomr(min, max) {
     let min = Math.ceil(min)
     let max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min) + min)
 }
 
 game.fillRect(player.posx, player.posy, 50, 50)
