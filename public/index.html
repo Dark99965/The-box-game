@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testy</title>
+    <style>#Game { border: 1px solid black;}</style>
+</head>
+<body>
+    <canvas id="Game" height="500" width="500"></canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        let canvas = document.querySelector("#Game");
+        let game = canvas.getContext("2d");
+        game.fillStyle = "Red";
+        // vars for player
+        let player = {
+            posx: 0,
+            posy: 0
+        }
+        game.fillRect(player.posx, player.posy, 50, 50)
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "w") {
+                player.posy -= 5
+            }
+            if (e.key === "s") {
+                player.posy += 5
+            }
+            if (e.key === "d") {
+                player.posx += 5
+            }
+            if (e.key === "a") {
+                player.posx -= 5
+            }
+            if (e.key === " ") {
+                game.strokeRect()
+            }
+            game.clearRect(0,0, canvas.width, canvas.height)
+            game.fillRect(player.posx, player.posy, 50, 50)
+        })
+    </script>
+</body>
+</html>
