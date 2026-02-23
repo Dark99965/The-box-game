@@ -9,13 +9,17 @@ let player = {
     posx: 0,
     posy: 0
 }
-
+//  list for corin
+let corin = [{
+    x: randomr(0, canvas.height),
+    y: randomr(0, canvas.width)
+}]
 // Random func
 
 function randomr(min, max) {
-    let min = Math.ceil(min)
-    let max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min) + min)
+    let cmin = Math.ceil(min)
+    let fmax = Math.floor(max)
+    return Math.floor(Math.random() * (fmax - cmin) + cmin)
 }
 
 game.fillRect(player.posx, player.posy, 50, 50)
@@ -40,12 +44,9 @@ window.addEventListener("keydown", (e) => {
     }
 
     if (e.key === " ") {
-        game.strokeStyle
-        game.strokeRect(50, 50, 50, 50)
     }
 
-    game.clearRect(0,0, canvas.width, canvas.height)
-
+    game.clearRect(0, 0, canvas.width, canvas.height)
     game.fillRect(player.posx, player.posy, 50, 50)
 
 })
