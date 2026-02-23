@@ -9,11 +9,9 @@ let player = {
     posx: 0,
     posy: 0
 }
-//  list for corin
-let corin = [{
-    x: randomr(0, canvas.height),
-    y: randomr(0, canvas.width)
-}]
+
+let coins = []
+
 // Random func
 
 function randomr(min, max) {
@@ -44,9 +42,18 @@ window.addEventListener("keydown", (e) => {
     }
 
     if (e.key === " ") {
+        coins.push({
+            x: randomr(0, canvas.height),
+            y: randomr(0, canvas.width)
+        })
     }
 
     game.clearRect(0, 0, canvas.width, canvas.height)
+    game.strokeStyle = "yellow"
+    coins.forEach(coin => {
+        game.rect(coin.x, coin.y, 50, 50)
+        game.stroke()
+    })
     game.fillRect(player.posx, player.posy, 50, 50)
 
 })
