@@ -43,7 +43,7 @@ window.addEventListener("keydown", (e) => {
 
     if (e.key === " ") {
         if (coins[0]) {
-            console.log("ex")
+            coins.splice(0, 1)
         }
         coins.push({
             x: randomr(0, canvas.width),
