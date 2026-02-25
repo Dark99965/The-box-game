@@ -49,10 +49,9 @@ window.addEventListener("keydown", (e) => {
     }
 
     game.clearRect(0, 0, canvas.width, canvas.height)
-    game.strokeStyle = "yellow"
+    game.strokeStyle = "blue"
     coins.forEach(coin => {
-        game.rect(coin.x, coin.y, 50, 50)
-        game.stroke()
+        game.strokeRect(coin.x, coin.y, 50, 50)
     })
     game.fillRect(player.posx, player.posy, 50, 50)
 
