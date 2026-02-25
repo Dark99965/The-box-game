@@ -42,6 +42,9 @@ window.addEventListener("keydown", (e) => {
     }
 
     if (e.key === " ") {
+        if (coins[0]) {
+            console.log("ex")
+        }
         coins.push({
             x: randomr(0, canvas.width),
             y: randomr(0, canvas.height)
